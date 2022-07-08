@@ -21,7 +21,7 @@ variable fileid
 : copy>tmp copy @ tmp 2 + copy-len @ cmove tmp 2 + copy ! ;
 : '>s" [char] s copy @ 2 - c! 34 copy @ 1 - c! 32 copy @ c! ;
 : '>"  34 copy @ copy-len @ 1- + c! ;
-: ''len>s""len copy @ 2 - copy c! copy-len @ 2 + copy-len c! ;
+: ''len>s""len copy @ 2 - copy ! copy-len @ 2 + copy-len ! ;
 : ''>s"" ( -- ) '>s" '>" ''len>s""len ;
 \ Meta II words. All expect a flag to be on the stack
 : BGN 0 cr ; \ added by me
